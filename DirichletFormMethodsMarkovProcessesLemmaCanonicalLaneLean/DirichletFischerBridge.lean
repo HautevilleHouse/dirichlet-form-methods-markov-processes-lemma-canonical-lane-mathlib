@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DirichletFormMethodsMarkovProcessesLemmaCanonicalLaneLean.DirichletFormLayer
+import HautevilleHouse.DirichletFormMethodsMarkovProcessesLemmaCanonicalLaneLean.MarkovProcessLayer
+
+namespace HautevilleHouse
+namespace DirichletFormMethodsMarkovProcessesLemmaCanonicalLaneLean
+
+def bridgeClosed (A : AdmissibleClass) : Prop :=
+  DirichletFormLayerClosed dirichletFormLayerCertificate ∧
+  MarkovProcessLayerClosed markovProcessLayerCertificate
+
+theorem bridge_from_admissible_class (A : AdmissibleClass) :
+    bridgeClosed A := by
+  exact And.intro dirichlet_form_layer_closed_checked markov_process_layer_closed_checked
+
+end HautevilleHouse
+end DirichletFormMethodsMarkovProcessesLemmaCanonicalLaneLean
